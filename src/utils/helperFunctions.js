@@ -21,3 +21,17 @@ export function findWinner(boxes) {
   return null
 }
 
+export function allBoxesClicked(boxes) { // checking if all boxes are clicked
+  let count = 0
+  boxes.forEach(item => {
+    if(item !== null) {
+      count++
+    }
+  })
+  if(count === 9) {
+    return true 
+  } else {
+    return false
+  }
+}
+
