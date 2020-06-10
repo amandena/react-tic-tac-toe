@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BoardBox from './BoardBox'
+import { Storage } from '../storage/storage'
 import * as utils from '../utils/helperFunctions'
 
 
