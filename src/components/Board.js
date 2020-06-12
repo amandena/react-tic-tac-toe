@@ -70,7 +70,7 @@ class Board extends React.Component {
     } else {
       status = `It is ${this.state.xIsNext ? 'x' : 'o'}'s turn.`
     }
-    
+
     return(
       <div className='board-wrapper'>
         <Link to='/' className='board-link'>Go Back to Scoreboard</Link>
@@ -123,7 +123,19 @@ class Board extends React.Component {
           </div>
         </div>
       
-        
+        <div className='board-history'>
+          <h2 className='board-heading'>Moves History:</h2>  
+          <ul className='board-history-list'>
+            {this.state.history.length === 0 && <span>No moves to show.</span>}
+
+            {this.state.history.length !== 0 && this.state.history.map((move, index) => {
+              return <li key={index}>Move {index + 1}: <strong>{move}</strong></li>
+            })}
+          </ul>
+        </div>
+        {winner && <div className='board-footer'>
+          <button className='btn' onClick={this.handleBoardRestart}>Start New Game</button>
+        </div>}
       </div>
     )
   }
