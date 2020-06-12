@@ -53,21 +53,48 @@ class Board extends React.Component {
       <div className='board-wrapper'>
         <div className='board'>
           <div className='board-row'>
-            <BoardBox value={this.state.boxes[0]}/>
-            <BoardBox value={this.state.boxes[1]}/>
-            <BoardBox value={this.state.boxes[2]}/>
+            <BoardBox 
+              value={this.state.boxes[0]}
+              handleBoxClick={() => this.handleBoxClick(0)}
+            />
+            <BoardBox 
+              value={this.state.boxes[1]}
+              handleBoxClick={() => this.handleBoxClick(1)}
+            />
+            <BoardBox 
+              value={this.state.boxes[2]}
+              handleBoxClick={() => this.handleBoxClick(2)}
+            />
           </div>
 
           <div className='board-row'>
-            <BoardBox value={this.state.boxes[3]}/>
-            <BoardBox value={this.state.boxes[4]}/>
-            <BoardBox value={this.state.boxes[5]}/>
+            <BoardBox 
+              value={this.state.boxes[3]}
+              handleBoxClick={() => this.handleBoxClick(3)}
+            />
+            <BoardBox 
+              value={this.state.boxes[4]}
+              handleBoxClick={() => this.handleBoxClick(4)}
+            />
+            <BoardBox 
+              value={this.state.boxes[5]}
+              handleBoxClick={() => this.handleBoxClick(5)}
+            />
           </div>
 
           <div className='board-row'>
-            <BoardBox value={this.state.boxes[6]}/>
-            <BoardBox value={this.state.boxes[7]}/>
-            <BoardBox value={this.state.boxes[8]}/>
+            <BoardBox 
+              value={this.state.boxes[6]}
+              handleBoxClick={() => this.handleBoxClick(6)}
+            />
+            <BoardBox 
+              value={this.state.boxes[7]}
+              handleBoxClick={() => this.handleBoxClick(7)}
+            />
+            <BoardBox 
+              value={this.state.boxes[8]}
+              handleBoxClick={() => this.handleBoxClick(8)}
+            />
           </div>
         </div>
       
