@@ -57,10 +57,26 @@ class Board extends React.Component {
   }
 
   render() {
+    const winner = utils.findWinner(this.state.boxes)
+    const isFilled = utils.allBoxesClicked(this.state.boxes)
+
+    let status 
+    if(winner) {
+      status = `The winner is ${winner}!`
+      this.storage.update([`${winner} won`])
+    } else if(!winner && isFilled) {
+      status = 'Game Tied!'
+      this.storage.update(['Game Tied!'])
+    } else {
+      status = `It is ${this.state.xIsNext ? 'x' : 'o'}'s turn.`
+    }
+    
     return(
       <div className='board-wrapper'>
         <Link to='/' className='board-link'>Go Back to Scoreboard</Link>
         <div className='board'>
+          <h2 className='board-heading'>{status}</h2>
+
           <div className='board-row'>
             <BoardBox 
               value={this.state.boxes[0]}
