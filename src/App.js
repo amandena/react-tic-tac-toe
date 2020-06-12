@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css'
 import './styles/board.css'
 import './styles/board-box.css'
@@ -9,9 +10,11 @@ import Scoreboard from './components/Scoreboard'
 function App() {
   return (
     <div className='App'>
-      <h1>TIC TAC TOE</h1>
-      <Board/>
-      <Scoreboard/>
+      <BrowserRouter>
+        <h1>TIC TAC TOE</h1>
+        <Route path='/board' component={Board}/>
+        <Route exact path='/' component={Scoreboard}/>
+      </BrowserRouter>
     </div>
   )
 }
