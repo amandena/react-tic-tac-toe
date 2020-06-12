@@ -48,9 +48,18 @@ class Board extends React.Component {
     })
   }
 
+  handleBoardRestart = () => {
+    this.setState({
+      boxes: Array(9).fill(null),
+      history: [],
+      xIsNext: true
+    })
+  }
+
   render() {
     return(
       <div className='board-wrapper'>
+        <Link to='/' className='board-link'>Go Back to Scoreboard</Link>
         <div className='board'>
           <div className='board-row'>
             <BoardBox 
