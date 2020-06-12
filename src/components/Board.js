@@ -72,71 +72,73 @@ class Board extends React.Component {
     }
 
     return(
-      <div className='board-wrapper'>
+      <>
         <Link to='/' className='board-link'>Go Back to Scoreboard</Link>
-        <div className='board'>
-          <h2 className='board-heading'>{status}</h2>
+        <div className='board-wrapper'>
+          <div className='board'>
+            <h2 className='board-heading'>{status}</h2>
 
-          <div className='board-row'>
-            <BoardBox 
-              value={this.state.boxes[0]}
-              handleBoxClick={() => this.handleBoxClick(0)}
-            />
-            <BoardBox 
-              value={this.state.boxes[1]}
-              handleBoxClick={() => this.handleBoxClick(1)}
-            />
-            <BoardBox 
-              value={this.state.boxes[2]}
-              handleBoxClick={() => this.handleBoxClick(2)}
-            />
-          </div>
+            <div className='board-row'>
+              <BoardBox 
+                value={this.state.boxes[0]}
+                handleBoxClick={() => this.handleBoxClick(0)}
+              />
+              <BoardBox 
+                value={this.state.boxes[1]}
+                handleBoxClick={() => this.handleBoxClick(1)}
+              />
+              <BoardBox 
+                value={this.state.boxes[2]}
+                handleBoxClick={() => this.handleBoxClick(2)}
+              />
+            </div>
 
-          <div className='board-row'>
-            <BoardBox 
-              value={this.state.boxes[3]}
-              handleBoxClick={() => this.handleBoxClick(3)}
-            />
-            <BoardBox 
-              value={this.state.boxes[4]}
-              handleBoxClick={() => this.handleBoxClick(4)}
-            />
-            <BoardBox 
-              value={this.state.boxes[5]}
-              handleBoxClick={() => this.handleBoxClick(5)}
-            />
-          </div>
+            <div className='board-row'>
+              <BoardBox 
+                value={this.state.boxes[3]}
+                handleBoxClick={() => this.handleBoxClick(3)}
+              />
+              <BoardBox 
+                value={this.state.boxes[4]}
+                handleBoxClick={() => this.handleBoxClick(4)}
+              />
+              <BoardBox 
+                value={this.state.boxes[5]}
+                handleBoxClick={() => this.handleBoxClick(5)}
+              />
+            </div>
 
-          <div className='board-row'>
-            <BoardBox 
-              value={this.state.boxes[6]}
-              handleBoxClick={() => this.handleBoxClick(6)}
-            />
-            <BoardBox 
-              value={this.state.boxes[7]}
-              handleBoxClick={() => this.handleBoxClick(7)}
-            />
-            <BoardBox 
-              value={this.state.boxes[8]}
-              handleBoxClick={() => this.handleBoxClick(8)}
-            />
+            <div className='board-row'>
+              <BoardBox 
+                value={this.state.boxes[6]}
+                handleBoxClick={() => this.handleBoxClick(6)}
+              />
+              <BoardBox 
+                value={this.state.boxes[7]}
+                handleBoxClick={() => this.handleBoxClick(7)}
+              />
+              <BoardBox 
+                value={this.state.boxes[8]}
+                handleBoxClick={() => this.handleBoxClick(8)}
+              />
+            </div>
           </div>
+        
+          <div className='board-history'>
+            <h2 className='board-heading'>Moves History:</h2>  
+            <ul className='board-history-list'>
+              {this.state.history.length === 0 && <span>No moves to show.</span>}
+
+              {this.state.history.length !== 0 && this.state.history.map((move, index) => {
+                return <li key={index}>Move {index + 1}: <strong>{move}</strong></li>
+              })}
+            </ul>
+          </div>
+          {winner && <div className='board-footer'>
+            <button className='btn' onClick={this.handleBoardRestart}>Start New Game</button>
+          </div>}
         </div>
-      
-        <div className='board-history'>
-          <h2 className='board-heading'>Moves History:</h2>  
-          <ul className='board-history-list'>
-            {this.state.history.length === 0 && <span>No moves to show.</span>}
-
-            {this.state.history.length !== 0 && this.state.history.map((move, index) => {
-              return <li key={index}>Move {index + 1}: <strong>{move}</strong></li>
-            })}
-          </ul>
-        </div>
-        {winner && <div className='board-footer'>
-          <button className='btn' onClick={this.handleBoardRestart}>Start New Game</button>
-        </div>}
-      </div>
+      </>
     )
   }
 }
