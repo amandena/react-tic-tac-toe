@@ -15,6 +15,39 @@ class Board extends React.Component {
     }
   }
 
+  storage = new Storage()
+
+  handleBoxClick = index => {
+    // current state of boxes
+    const boxes = this.state.boxes.slice()
+
+    // current state of history
+    let history = this.state.history 
+    
+    // stop if the game is won
+    if(utils.findWinner(boxes) || boxes[index]) {
+      return
+    }
+
+    // stop if all boxes filled
+    if(utils.allBoxesClicked(boxes) === true) {
+      return 
+    }
+
+    // mark the clicked box with either 'x' or 'o'
+    boxes[index] = this.state.xIsNext ? 'x' : 'o'
+
+    // add move to game history
+    history.push(boxes[index])
+
+    // update state
+    this.setState({
+      boxes: boxes,
+      history: history,
+      xIsNext: !this.state.xIsNext
+    })
+  }
+
   render() {
     return(
       <div className='board-wrapper'>
