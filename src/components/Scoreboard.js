@@ -21,7 +21,7 @@ class Scoreboard extends React.Component {
         <h1>Recent Games:</h1>
         <ul>
           {this.state.scoreboard.map((leader, key) => {
-            return <li key={key}>leader</li>  
+            return <li key={key}>{leader}</li>  
           })}
         </ul>
 
