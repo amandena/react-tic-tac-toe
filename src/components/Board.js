@@ -73,7 +73,6 @@ class Board extends React.Component {
 
     return(
       <>
-        <Link to='/' className='board-link'>Go Back to Scoreboard</Link>
         <div className='board-wrapper'>
           <div className='board'>
             <h2 className='board-heading'>{status}</h2>
@@ -123,7 +122,7 @@ class Board extends React.Component {
               />
             </div>
           </div>
-        
+          
           <div className='board-history'>
             <h2 className='board-heading'>Moves History:</h2>  
             <ul className='board-history-list'>
@@ -134,10 +133,11 @@ class Board extends React.Component {
               })}
             </ul>
           </div>
-          {winner && <div className='board-footer'>
+          {(winner || isFilled) && <div className='board-footer'>
             <button className='btn' onClick={this.handleBoardRestart}>Start New Game</button>
           </div>}
         </div>
+        <Link to='/' className='board-link'>Go Back to Scoreboard</Link>
       </>
     )
   }
