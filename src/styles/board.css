@@ -1,6 +1,8 @@
 .board-wrapper {
+  justify-content: center;
   display: flex;
   flex-flow: row wrap;
+  padding: 20px;
 }
 
 .board {
