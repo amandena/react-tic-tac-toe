@@ -8,8 +8,22 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color .25s ease-in-out;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.btn:hover {
+.btn:hover, .board-link {
   background-color: #2980b9;
+}
+
+.board-link {
+  padding: 12px 16px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #3498db;
+  border: 0;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .25s ease-in-out;
 }
