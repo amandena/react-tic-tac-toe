@@ -18,12 +18,11 @@ class Scoreboard extends React.Component {
   render() {
     return(
       <div className='game'>
-        <h1>Recent Games:</h1>
-        <ul>
-          {this.state.scoreboard.map((leader, key) => {
-            return <li key={key}>{leader}</li>  
-          })}
-        </ul>
+        <h2>Recent Games:</h2>
+
+        {this.state.scoreboard}
+
+        <br/>
 
         <Link to='/board'>
           <button className='btn'>Start New Game</button>
