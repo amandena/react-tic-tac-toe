@@ -11,7 +11,7 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.btn:hover, .board-link {
+.btn:hover, .board-link:hover {
   background-color: #2980b9;
 }
 

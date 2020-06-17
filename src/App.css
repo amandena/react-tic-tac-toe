@@ -2,3 +2,12 @@
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+body {
+  background-color: darkgrey;
+}
+
+h1 {
+  background-color: darkslategrey;
+  margin: 30px 500px;
+}
